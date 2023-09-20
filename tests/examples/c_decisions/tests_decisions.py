@@ -1,18 +1,20 @@
-from msilib.schema import SelfReg
-from typing import Self
 import unittest
 
-from src.examples.c_decisions.decisions import get_and_result, get_or_result, test_config
+#from src.examples.c_decisions.decisions import get_and_result, get_notted_value, get_or_result, is_consonant, is_even, is_odd, is_overtime, is_vowel, test_config
+from src.examples.c_decisions.decisions import get_and_result, get_letter_grade, get_notted_value, get_or_result, is_consonant, is_even, is_odd, is_overtime, is_vowel, test_config
 
 class Test_Config(unittest.TestCase):
 
-    def test_configuration(self):
-        self.assertEqual(True, test_config())
 
-        def test_and_truth_table(self):
-            self.assertEqual(True, get_and_result)(True, True)
-            self.assertEqual(False, get_and_result)(True, False)
-            self.assertEqual(False, get_and_result)(False, True)
-            self.assertEqual(False, get_or_result)(True, True)
+        
 
-
+        def test_get_letter_grade(self):
+         self.assertEqual(get_letter_grade(105), "Invalid Grade")
+         self.assertEqual(get_letter_grade(100), "A")
+         self.assertEqual(get_letter_grade(95), "A")
+         self.assertEqual(get_letter_grade(90), "A")
+         self.assertEqual(get_letter_grade(85), "B")
+         self.assertEqual(get_letter_grade(75), "C")
+         self.assertEqual(get_letter_grade(65), "D")
+         self.assertEqual(get_letter_grade(55), "F")
+         self.assertEqual(get_letter_grade(-5), "Invalid Grade")

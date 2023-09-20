@@ -1,7 +1,9 @@
-from operator import truediv
 import decisions
 
-result = decisions.is_overtime(40)
+grade = int(input("Enter a numerical grade: "))
 
-if(result == True): 
-    print('30 is not overtime')
+letter_grade = decisions.get_letter_grade(grade)
+
+print("Grade is: " + letter_grade)
+
+decisions.run_menu()
