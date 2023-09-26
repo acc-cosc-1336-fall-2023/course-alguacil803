@@ -1,5 +1,4 @@
 def test_config():
-    
     return True
 
 def display_numbers(num):
@@ -40,3 +39,103 @@ def for_sum_of_squares(num):
         sum = sum + val * val
 
     return sum
+
+def get_sum(num): #1+2+3=6
+    sum = 0
+    cnt = 0
+
+    while(cnt <= num):
+        sum += cnt #sum = sum + cnt
+        cnt += 1 #cnt = cnt + 1
+
+    return sum
+
+def get_sum_for(num):
+    sum = 0
+
+    for n in range(num): 
+        sum += n + 1
+
+    return sum
+
+def for_num_range_w_start_value(num1, num2):
+
+    for n in range(num1, num2):
+        print(n)
+
+def for_num_range_w_step_value(num1, num2, step):
+
+    for n in range(num1, num2, step):
+        print(n)
+
+def for_display_squares(num1, num2):
+    for n in range(num1, num2):
+        square = n ** 2
+        print(n, '\t', square)
+
+def while_validate_user_input():
+    lot_number = -1
+
+    while(lot_number != 0):
+        lot_number = input("Enter lot number(1-10) or 0 to exit: ")
+
+        if(lot_number.isnumeric()):
+            lot_number = int(lot_number)
+            
+            if(lot_number != 0):
+                while((lot_number < 1 or lot_number > 10)):
+                    lot_number = int(input('Number must be in the range 1 to 10, try again'))
+
+                print("Lot number: " , lot_number)
+            else:
+                print("Program will exit.")
+        else:
+            print("Lot number must be numeric, try again")
+
+def nested_while_loop(row, col):
+    i = 0
+
+    while(i < row):
+        print("i:", i, "outer loop-wait for inner loop")
+        i += 1
+        j = 0
+
+        while(j < col):
+            print("j: ", j, "\t inner loop")
+            j += 1
+
+        print("inner loop complete")
+
+def nested_for_loop(row, col):
+
+    for i in range(row):
+        print("i:", i , "outer loop")
+        
+        for j in range(col):
+            print("j", j, "inner loop")
+        
+        print("inner loop complete")
+
+def for_multiplication_table(row, col):
+
+    for i in range(1, row+1):
+        for j in range(1, col+1):
+            print(str(i*j).rjust(3, " "), end = " ")
+
+            print(" ")
+
+def while_multiplication_table(row, col):
+
+    i = 0
+
+    while i < row:
+        j = 0
+
+        while j < col:
+            product = (i + 1) * (j + 1)
+            print(str(product).rjust(3, " "), end= " ")
+
+            j += 1
+
+        i += 1
+        print(" ") 

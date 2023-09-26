@@ -64,3 +64,4 @@ def handle_menu_option(option):
 
 def selected_option_1():
     print("User selected option 1")
+    
