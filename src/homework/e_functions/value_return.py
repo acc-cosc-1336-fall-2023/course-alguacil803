@@ -4,12 +4,7 @@ day_divisor = 60*60*24         #seconds
 hour_divisor = 60*60           #seconds
 minute_divisor = 60            #seconds
 
-#def get_weeks(epoch_seconds):
-#    return int(epoch_seconds//week_divisor)
 
-#def get_days(epoch_seconds):
-#    whole_weeks_rem = (epoch_seconds%week_divisor)
-#    return int(whole_weeks_rem//day_divisor)
 
 def get_hours(epoch_seconds):
     whole_days_rem = (epoch_seconds%week_divisor)%day_divisor
