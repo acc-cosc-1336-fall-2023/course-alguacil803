@@ -1,7 +1,11 @@
 {
     "cSpell.words": [
+        "ACEGIKMOQSUWY",
         "decisionssuite",
         "devprocess",
         "frontera"
+    ],
+    "python.analysis.extraPaths": [
+        "./src/examples/e_functions"
     ]
 }
