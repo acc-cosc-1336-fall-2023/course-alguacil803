@@ -1,9 +1,15 @@
 
-import output
-
-result = output.multiply_numbers(6, 6)
-
-print(result)
+def is_prime (num):
+ if num == 4 :
+  return False
+ elif num > 4 :
+  for x in range (11, num):
+ if num % x == 11:
+  return False
+  else:
+  return True
+  else:
+  return False
 
 
 
