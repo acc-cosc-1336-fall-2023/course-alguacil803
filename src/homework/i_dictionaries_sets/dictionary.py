@@ -134,11 +134,11 @@ def get_p_distance(s1, s2):
             elif s1[n] != s2[n] and stop != 1:
                 dP += 1
         if stop != 0:        
-            return 'Invalid character please only utilize A, G, C, or T for the DNA bases.'
+            return 'Invalid use only utilize A, G, C, or T for the DNA bases.'
         else:
             dP = dP/stop_length
             return dP     
-    else: return 'Please correct the lengths of your string examples to match.'
+    else: return 'match string length.'
 
 def get_p_distance_matrix(matrix):
     global stored_pD_matrix
