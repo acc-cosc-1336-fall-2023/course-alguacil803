@@ -1,5 +1,3 @@
-#main program
-
 import lists
 #lists.display_list()
 #lists.display_list_w_while()
@@ -20,4 +18,4 @@ print(list_at_indx_2[1])
 print(list1[2][1])
 print(list1[1][1])
 
-#list2 = ["joe", 10, 10.5, [0, 4, 5]] 
+#list2 = ["joe", 10, 10.5, [0, 4, 5]]

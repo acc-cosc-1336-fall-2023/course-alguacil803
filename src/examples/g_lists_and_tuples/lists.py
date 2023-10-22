@@ -69,3 +69,6 @@ def get_list_return_value(list1):
     list1[0] = 0
 
     return list1
+
+def search_for_item_in_list(item, list1):
+    return item in list1

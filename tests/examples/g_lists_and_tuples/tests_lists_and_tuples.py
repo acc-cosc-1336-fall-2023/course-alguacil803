@@ -1,6 +1,6 @@
 import unittest
 
-from src.examples.g_lists_and_tuples.lists import get_list_return_value, get_list_total_for, get_list_total_while, list_ref_param, test_config
+from src.examples.g_lists_and_tuples.lists import get_list_return_value, get_list_total_for, get_list_total_while, list_ref_param, search_for_item_in_list, test_config
 
 class Test_Config(unittest.TestCase):
 
@@ -27,3 +27,29 @@ class Test_Config(unittest.TestCase):
         get_list_return_value(list1)
         print("after", id(list1))
         self.assertEqual(list1, [0, 10, 20])
+
+    def test_list_slicing_start_end(self):
+         days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+         self.assertEqual(days[2:5], ['Tuesday', 'Wednesday', 'Thursday'])
+
+    def test_list_slicing_start_no_end(self):
+        list = [1,2,3,4,5]
+
+        self.assertEqual(list[2:], [3,4,5])
+
+    def test_list_slicing_w_step(self):
+        list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        self.assertEqual(list[1:8:2], [2,4,6,8])
+
+    def test_list_slicing_start_from_end(self):
+        list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        self.assertEqual(list[-5:], [6, 7, 8, 9, 10])
+
+    def test_item_in_list(self):
+        prod_nums = ['V475', 'F987', 'Q143', 'R688']
+
+        self.assertEqual(search_for_item_in_list('F987', prod_nums), True)
+        self.assertEqual(search_for_item_in_list('G999', prod_nums), False)
