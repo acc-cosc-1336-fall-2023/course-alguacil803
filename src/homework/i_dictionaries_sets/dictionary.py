@@ -77,7 +77,7 @@ def make_matrix():
                 stored_matrix.append(current_list)
                 current_list = []
             else:
-                print('  >>>CANCELED<<<')
+                print('  >>>CANCEL<<<')
             user_entry = '0'
 
         elif is_empty_clause(user_entry) == True:
@@ -88,7 +88,7 @@ def make_matrix():
             if is_confirmed_clause(user_confirmation) == True:
                 current_list = []
             else:
-                print('  >>>CANCELED<<<')
+                print('  >>>CANCEL<<<')
 
         elif is_stop_clause(user_entry) == True:
             user_entry = input('return to main menu?\n\t>>> ').upper()
@@ -96,7 +96,7 @@ def make_matrix():
                 user_entry = stop_clause
 
         else:
-            print('  >>>INVALID ENTRY<<<')
+            print('  >>>Bad ENTRY<<<')
 
 def main_menu():
     global exit_clause, confirmation_clause, stored_matrix
