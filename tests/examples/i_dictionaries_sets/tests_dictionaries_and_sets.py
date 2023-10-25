@@ -1,18 +1,38 @@
 import unittest
 
-from src.homework.i_dictionaries_sets.dictionary import get_p_distance, get_p_distance_matrix
+from src.examples.i_dictionaries_sets.dictionaries import add_friend_phonebook, delete_friend_phonebook, is_key_in_dictionary, test_config, update_friend_phonebook
 
 class Test_Config(unittest.TestCase):
 
-    def test_get_p_distance(self):
-        list1 = ['T','T','T','C','C','A','T','T','T','A']
-        list2 = ['G','A','T','T','C','A','T','T','T','C']
-        self.assertEqual(0.4, get_p_distance(list1, list2))
+    def test_configuration(self):
+        self.assertEqual(True, test_config())
 
-    def test_p_distance_matrix(self):
-        list1 = ['T','T','T','C','C','A','T','T','T','A']
-        list2 = ['G','A','T','T','C','A','T','T','T','C']
-        list3 = ['T','T','T','C','C','A','T','T','T','T']
-        list4 = ['G','T','T','C','C','A','T','T','T','A']
-        dataset = [list1, list2, list3, list4]
-        self.assertEqual([[0.0, 0.4, 0.1, 0.1], [0.4, 0.0, 0.4, 0.3], [0.1, 0.4, 0.0, 0.2], [0.1, 0.3, 0.2, 0.0]], get_p_distance_matrix(dataset))
+    def test_is_key_in_dictionary(self):
+        phonebook = {'Chris':'555-1111', 'Katie':'555-2222', 'Joanne':'555-3333'}
+
+        self.assertEqual(is_key_in_dictionary('Cris', phonebook), False)
+        self.assertEqual(is_key_in_dictionary('Chris', phonebook), True)
+
+    def test_add_friend_phonebook(self):
+        phonebook = {}
+        add_friend_phonebook('Chris', '555-1111', phonebook)
+        
+        self.assertEqual(phonebook, {'Chris':'555-1111'})
+    
+    def test_update_friend_phonebook(self):
+        phonebook = {'Chris':'555-1111'}
+
+        update_friend_phonebook('Chris', '555-1234', phonebook)
+        self.assertEqual(phonebook, {'Chris':'555-1234'})
+
+        update_friend_phonebook('Cris', '555-4321', phonebook)
+        self.assertEqual(phonebook, {'Chris':'555-1234'})
+
+    def test_delete_friend_phonebook(self):
+        phonebook = {'Chris':'555-1111', 'Katie':'555-2222', 'Joanne':'555-3333'}
+        delete_friend_phonebook('Chris', phonebook)
+
+        self.assertEqual(phonebook, {'Katie':'555-2222', 'Joanne':'555-3333'})
+
+        delete_friend_phonebook('Kati', phonebook)
+        self.assertEqual(phonebook, {'Katie':'555-2222', 'Joanne':'555-3333'})

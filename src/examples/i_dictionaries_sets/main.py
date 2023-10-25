@@ -1,16 +1,23 @@
-
-import keyword
 import dictionaries
 
-phonebook = {'Danny' : '312-5698', 'Jose' : '652-6339', 'lola' : '888-8888'}
-#print(phonebook['Danny'])
-#print(phonebook['Jose'])
-#print(phonebook['lola'])
+#main program
+phonebook = {}#empty dictionary
 
-for number in phonebook:
- print(number, phonebook[number])
-for value in phonebook.values():
- print  (value)
+print('Add friends\n')
+dictionaries.add_friend_phonebook('Chris', '555-1111', phonebook)
+dictionaries.add_friend_phonebook('Katie', '555-2222', phonebook)
 
+for name, value in phonebook.items():
+    print(name, value)
 
+print('\nUpdate katie \n')
+dictionaries.update_friend_phonebook('Katie', '555-2345', phonebook)
 
+for name, value in phonebook.items():
+    print(name, value)
+
+print('\nDelete Chris \n')
+dictionaries.delete_friend_phonebook('Chris', phonebook)
+
+for name, value in phonebook.items():
+    print(name, value)
