@@ -1,9 +1,12 @@
 import unittest
 
-from src.examples.f_files_exception.exceptions import test_config
+from src.examples.j_classes.bank_account import BankAccount
 
 class Test_Config(unittest.TestCase):
 
-    def test_configuration(self):
-        self.assertEqual(True, test_config())
+    def test_bank_account_balance(self):
+        account = BankAccount(50)
 
+        self.assertEqual(account.get_balance(), 50)
+        
+    
